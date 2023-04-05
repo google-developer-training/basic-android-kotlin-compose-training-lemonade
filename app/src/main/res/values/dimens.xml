@@ -15,13 +15,9 @@
   ~ limitations under the License.
   -->
 <resources>
-    <string name="app_name">Lemonade</string>
-    <string name="lemon_select">Tap the lemon tree to select a lemon</string>
-    <string name="lemon_squeeze">Keep tapping the lemon to squeeze it</string>
-    <string name="lemon_drink">Tap the lemonade to drink it</string>
-    <string name="lemon_empty_glass">Tap the empty glass to start again</string>
-    <string name="lemon_tree_content_description">Lemon tree</string>
-    <string name="lemon_content_description">Lemon</string>
-    <string name="lemonade_content_description">Glass of lemonade</string>
-    <string name="empty_glass_content_description">Empty glass</string>
+
+    <dimen name="button_corner_radius">40dp</dimen>
+    <dimen name="button_interior_padding">24dp</dimen>
+    <dimen name="padding_vertical">32dp</dimen>
+
 </resources>
