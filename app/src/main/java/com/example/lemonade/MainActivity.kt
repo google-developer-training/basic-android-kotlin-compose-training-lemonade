@@ -22,6 +22,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,7 +51,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
 import com.example.lemonade.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AppTheme() {
-                LemonApp()
+                LemonadeApp()
             }
         }
     }
@@ -67,7 +67,7 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LemonApp() {
+fun LemonadeApp() {
 
     var currentStep by remember { mutableStateOf(1) }
 
@@ -76,9 +76,12 @@ fun LemonApp() {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "Lemonade",
-                    fontWeight = FontWeight.Bold
-                ) },
+                title = {
+                    Text(
+                        text = "Lemonade",
+                        fontWeight = FontWeight.Bold
+                    )
+                },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
                     titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
@@ -153,30 +156,33 @@ fun LemonTextAndImage(
     onImageClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier.fillMaxSize()
+    Box(
+        modifier = modifier
     ) {
-
-        Button(
-            onClick = onImageClick,
-            shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize()
         ) {
-            Image(
-                painter = painterResource(drawableResourceId),
-                contentDescription = stringResource(contentDescriptionResourceId),
-                modifier = Modifier
-                    .wrapContentSize()
-                    .padding(dimensionResource(R.dimen.button_interior_padding))
+            Button(
+                onClick = onImageClick,
+                shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
+            ) {
+                Image(
+                    painter = painterResource(drawableResourceId),
+                    contentDescription = stringResource(contentDescriptionResourceId),
+                    modifier = Modifier
+                        .wrapContentSize()
+                        .padding(dimensionResource(R.dimen.button_interior_padding))
+                )
+            }
+            Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_vertical)))
+            Text(
+                text = stringResource(textLabelResourceId),
+                style = MaterialTheme.typography.bodyLarge
             )
         }
-        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_vertical)))
-        Text(
-            text = stringResource(textLabelResourceId),
-            fontSize = 18.sp
-        )
     }
 }
 
@@ -184,6 +190,6 @@ fun LemonTextAndImage(
 @Composable
 fun LemonPreview() {
     AppTheme() {
-        LemonApp()
+        LemonadeApp()
     }
 }
