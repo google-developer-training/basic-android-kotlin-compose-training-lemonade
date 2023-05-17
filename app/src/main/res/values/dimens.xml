@@ -19,5 +19,7 @@
     <dimen name="button_corner_radius">40dp</dimen>
     <dimen name="button_interior_padding">24dp</dimen>
     <dimen name="padding_vertical">32dp</dimen>
+    <dimen name="button_image_width">128dp</dimen>
+    <dimen name="button_image_height">160dp</dimen>
 
 </resources>
