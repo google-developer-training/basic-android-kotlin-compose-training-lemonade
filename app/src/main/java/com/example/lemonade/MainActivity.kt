@@ -28,7 +28,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -94,6 +94,7 @@ fun LemonadeApp() {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(innerPadding)
                 .background(MaterialTheme.colorScheme.tertiaryContainer),
             color = MaterialTheme.colorScheme.background
         ) {
@@ -173,7 +174,8 @@ fun LemonTextAndImage(
                     painter = painterResource(drawableResourceId),
                     contentDescription = stringResource(contentDescriptionResourceId),
                     modifier = Modifier
-                        .wrapContentSize()
+                        .width(dimensionResource(R.dimen.button_image_width))
+                        .height(dimensionResource(R.dimen.button_image_height))
                         .padding(dimensionResource(R.dimen.button_interior_padding))
                 )
             }
