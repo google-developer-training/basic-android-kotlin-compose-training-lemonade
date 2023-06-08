@@ -14,9 +14,19 @@
  * limitations under the License.
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    id 'com.android.application' version '8.0.0-beta05' apply false
-    id 'com.android.library' version '8.0.0-beta05' apply false
-    id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
 }
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Lemonade"
+include(":app")
