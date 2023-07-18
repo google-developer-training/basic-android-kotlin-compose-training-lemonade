@@ -90,11 +90,11 @@ fun LemonadeApp() {
                 )
             )
         }
-    ) { innerPadding ->
+    ) {  innerPadding ->
         Surface(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
+//                .padding(innerPadding)
                 .background(MaterialTheme.colorScheme.tertiaryContainer),
             color = MaterialTheme.colorScheme.background
         ) {
@@ -107,7 +107,8 @@ fun LemonadeApp() {
                         onImageClick = {
                             currentStep = 2
                             squeezeCount = (2..4).random()
-                        }
+                        },
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
                 2 -> {
@@ -120,7 +121,8 @@ fun LemonadeApp() {
                             if (squeezeCount == 0) {
                                 currentStep = 3
                             }
-                        }
+                        },
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
 
@@ -131,7 +133,8 @@ fun LemonadeApp() {
                         contentDescriptionResourceId = R.string.lemonade_content_description,
                         onImageClick = {
                             currentStep = 4
-                        }
+                        },
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
                 4 -> {
@@ -141,7 +144,8 @@ fun LemonadeApp() {
                         contentDescriptionResourceId = R.string.empty_glass_content_description,
                         onImageClick = {
                             currentStep = 1
-                        }
+                        },
+                        modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
