@@ -82,11 +82,14 @@ fun LemonadeApp() {
                         fontWeight = FontWeight.Bold
                     )
                 },
-                colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    actionIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+//                colors = TopAppBarDefaults.smallTopAppBarColors(
+//                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+//                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+//                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+//                    actionIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+//                )
+                colors = TopAppBarDefaults.largeTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
                 )
             )
         }
